@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"maatwebsite/excel": "dev-master"
+		"maatwebsite/excel": "dev-master",
+		"paypal/rest-api-sdk-php" : "0.5.*"
 				
 	},
 	
