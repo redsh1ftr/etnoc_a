@@ -31,16 +31,66 @@ class ProductsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Product::$rules);
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+		$prod = new Product;
 
-		Product::create($data);
+		$prod->name = Input::get('name');
+		$prod->description = Input::get('description');
+
+		$prod->save();
+
+		$item_id = $prod->id;
+
+		$inv = new Inventory;
+
+		$inv->item_id = $item_id;
+		$inv->xsmall = Input::get('xsmall');
+		$inv->small = Input::get('small');
+		$inv->medium = Input::get('medium');
+		$inv->large = Input::get('large');
+		$inv->xlarge = Input::get('xlarge');
+		$inv->xxlarge = Input::get('xxlarge');
+		$inv->xxxlarge = Input::get('xxxlarge');
+
+		$inv->save();
+
+
+
+		$cost = new Cost;
+
+		$cost->item_id = $item_id;
+		$cost->xsmall = Input::get('xsmall_cost');
+		$cost->small = Input::get('small_cost');
+		$cost->medium = Input::get('medium_cost');
+		$cost->large = Input::get('large_cost');
+		$cost->xlarge = Input::get('xlarge_cost');
+		$cost->xxlarge = Input::get('xxlarge_cost');
+		$cost->xxxlarge = Input::get('xxxlarge_cost');
+
+		$cost->save();
+
+
+
+
+
+		$price = new Price;
+
+		$price->item_id = $item_id;
+		$price->xsmall = Input::get('xsmall_price');
+		$price->small = Input::get('small_price');
+		$price->medium = Input::get('medium_price');
+		$price->large = Input::get('large_price');
+		$price->xlarge = Input::get('xlarge_price');
+		$price->xxlarge = Input::get('xxlarge_price');
+		$price->xxxlarge = Input::get('xxxlarge_price');
+
+		$price->save();
+
+
+
 
 		return Redirect::route('products.index');
+	
 	}
 
 	/**
@@ -50,9 +100,13 @@ class ProductsController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
+	{	
 
-		return View::make('products.show', compact('product'))
+		$inv = Inventory::all();
+		$cost = Cost::all();
+		$price = Price::all();
+
+		return View::make('products.show', compact('inv', 'cost', 'price'))
 		->with('product', $id);
 	}
 

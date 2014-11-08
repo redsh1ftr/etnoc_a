@@ -8,6 +8,9 @@ class Cost extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = ['item_id', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge', 'xxxlarge'];
 
+
+
+	protected $table = 'costs';
 }

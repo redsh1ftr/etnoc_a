@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateXsmallInv extends Migration {
+class CreateBandsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,9 @@ class CreateXsmallInv extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('xsmall_inv', function(Blueprint $table)
+		Schema::create('bands', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('item_id');
-			$table->integer('quantity');
-			$table->integer('price');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +27,7 @@ class CreateXsmallInv extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('xsmall_inv');
+		Schema::drop('bands');
 	}
 
 }

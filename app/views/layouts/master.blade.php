@@ -46,6 +46,7 @@
 
     a, a:visited {
       text-decoration:none;
+      color:#ffffff;
     }
 
     h1 {

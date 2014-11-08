@@ -15,6 +15,14 @@ class CreatePricesTable extends Migration {
 		Schema::create('prices', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('item_id');
+			$table->string('xsmall');
+			$table->string('small');
+			$table->string('medium');
+			$table->string('large');
+			$table->string('xlarge');
+			$table->string('xxlarge');
+			$table->string('xxxlarge');
 			$table->timestamps();
 		});
 	}

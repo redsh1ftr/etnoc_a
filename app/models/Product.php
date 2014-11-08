@@ -18,12 +18,27 @@ class Product extends \Eloquent {
 
 
 
-	public function inventoryCheck(){
+	public function inventoryCheck($size){
 
-		return Inventory::where('item_id', $this->id)->get();
+		return Inventory::where('item_id', $this->id)->pluck($size);
 	}
 	
 
+	public function priceCheck($size){
+
+		return Price::where('item_id', $this->id)->pluck($size);
+	}
+	
+
+	public function costCheck($size){
+
+		return Cost::where('item_id', $this->id)->pluck($size);
+	}
+
+	public function sizeList(){
+
+		return Size::lists('size');
+	}
 
 
 

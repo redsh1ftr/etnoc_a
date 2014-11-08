@@ -1,6 +1,6 @@
 <?php
 
-class Size extends \Eloquent {
+class Band extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
@@ -9,8 +9,5 @@ class Size extends \Eloquent {
 
 	// Don't forget to fill this array
 	protected $fillable = [];
-
-
-	protected $table = 'sizes';
 
 }
