@@ -17,6 +17,11 @@ class CreateProductsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->text('description');
+			$table->text('type');
+			$table->string('sale')->nullable();
+			$table->string('paypal');
+			$table->string('preorder')->nullable();
+			$table->string('upcomming')->nullable();
 			$table->timestamps();
 		});
 	}

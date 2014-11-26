@@ -11,6 +11,13 @@
 |
 */
 
+/////
+
+
+
+
+////
+
 Route::get('/sales', function()
 {
 	return View::make('sales');
@@ -62,7 +69,11 @@ Route::resource('customers', 'CustomersController');
 
 Route::resource('products', 'ProductsController');
 
+Route::resource('events', 'EventsController');
 
+
+
+Route::get('/list/products/{type}', array('as' => 'type_sort', 'uses' => 'ProductsController@type'));
 
 
 

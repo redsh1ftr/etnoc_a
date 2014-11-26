@@ -9,9 +9,38 @@ class ProductsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$products = Product::all();
+		$products = Product::orderBy('preorder')->get();
 
 		return View::make('products.index', compact('products'));
+	}
+
+	public function type($type){
+
+		if($type == 'tee'){
+			$type2 = 'tank';
+		}else{
+			$type2 = $type;
+		}
+
+
+		if($type == 'all'){
+		
+		$products = Product::orderBy('upcoming')->orderBy('preorder', 'desc')->orderBy('sale', 'desc')->get();
+		
+		}elseif($type == 'sale'){
+
+		$products = Product::where('sale', '>', '')->orWhere('preorder', '>', '')->orWhere('upcoming', '>', '')->orderBy('upcoming')->orderBy('preorder', 'desc')->orderBy('sale', 'desc')->get();
+		
+}else{
+		
+		$products = Product::where('type', $type)->orWhere('type', $type2)->orderBy('upcoming')->orderBy('preorder', 'desc')->orderBy('sale', 'desc')->get();
+		
+		}
+
+
+		return View::make('products.index')
+		->with('type', $type)
+		->with('products', $products);
 	}
 
 	/**
@@ -32,10 +61,53 @@ class ProductsController extends \BaseController {
 	public function store()
 	{
 
+
+			if(Input::file('image_1')){
+				$newfile = Input::get('name');
+				$newfiletype = Input::get('type');
+				$file = Input::file('image_1'); // your file upload input field in the form should be named 'file'
+				$destinationPath = 'images/';
+				$filename = $file->getClientOriginalExtension($file);
+				//$extension =$file->getClientOriginalExtension(); //if you need extension of the file
+				$newfilename = "$newfile".'_'."$newfiletype".'_1'.".$filename";
+				$uploadSuccess = Input::file('image_1')->move($destinationPath, "$newfilename");
+
+			}else{$newfilename = '';}
+
+			if(Input::file('image_2')){
+				$newfile2 = Input::get('name');
+				$file = Input::file('image_2'); // your file upload input field in the form should be named 'file'
+				$destinationPath = 'images/';
+				$filename2 = $file->getClientOriginalExtension($file);
+				//$extension =$file->getClientOriginalExtension(); //if you need extension of the file
+				$newfilename2 = "$newfile2".'_'."$newfiletype".'_2'.".$filename2";
+				$uploadSuccess = Input::file('image_2')->move($destinationPath, "$newfilename2");
+
+			}else{$newfilename2 = '';}
+
+			if(Input::file('image_3')){
+				$newfile3 = Input::get('name');
+				$file = Input::file('image_3'); // your file upload input field in the form should be named 'file'
+				$destinationPath = 'images/';
+				$filename3 = $file->getClientOriginalExtension($file);
+				//$extension =$file->getClientOriginalExtension(); //if you need extension of the file
+				$newfilename3 = "$newfile3".'_'."$newfiletype".'_3'.".$filename3";;
+				$uploadSuccess = Input::file('image_3')->move($destinationPath, "$newfilename3");
+
+			}else{$newfilename3 = '';}
+
+
+
+
 		$prod = new Product;
 
 		$prod->name = Input::get('name');
 		$prod->description = Input::get('description');
+		$prod->type = Input::get('type');
+		$prod->sale = Input::get('sale');
+		$prod->paypal = Input::get('paypal');
+		$prod->upcoming = Input::get('upcoming');
+		$prod->preorder = Input::get('preorder');
 
 		$prod->save();
 
@@ -54,7 +126,14 @@ class ProductsController extends \BaseController {
 
 		$inv->save();
 
+		$pic = new Picture;
 
+		$pic->item_id = $item_id;
+		$pic->image_1 = $newfilename;
+		$pic->image_2 = $newfilename2;
+		$pic->image_3 = $newfilename3;
+
+		$pic->save();
 
 		$cost = new Cost;
 
@@ -102,11 +181,10 @@ class ProductsController extends \BaseController {
 	public function show($id)
 	{	
 
-		$inv = Inventory::all();
-		$cost = Cost::all();
-		$price = Price::all();
+		$newid = json_decode($id);
+		$product = Product::where('type', $newid->id)->get();
 
-		return View::make('products.show', compact('inv', 'cost', 'price'))
+		return View::make('products.show', compact('product'))
 		->with('product', $id);
 	}
 

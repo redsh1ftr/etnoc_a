@@ -15,6 +15,8 @@ class CreateBandsTable extends Migration {
 		Schema::create('bands', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('band_name');
+			$table->string('member_id');
 			$table->timestamps();
 		});
 	}

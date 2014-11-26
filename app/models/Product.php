@@ -8,7 +8,15 @@ class Product extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = [
+	'name',
+	'type',
+	'description',
+	'sale',
+	'paypal',
+	'upcoming',
+	'preorder',
+	];
 
 	
 
@@ -33,6 +41,20 @@ class Product extends \Eloquent {
 	public function costCheck($size){
 
 		return Cost::where('item_id', $this->id)->pluck($size);
+	}
+
+	public function sortType($type){
+
+		return Product::where('type', $type)->get();
+	}
+
+	public function getPictures(){
+
+		return Picture::where('item_id', $this->id)->get(); 
+	}
+
+	public function getFirstType($type){
+		return ClothingCategory::where('item_type', $this->$type)->pluck('category_name');
 	}
 
 	public function sizeList(){

@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aspire to Inspire</title>
+  <title>Stay Awake to Create</title>
    <link href="http://www.eternallynocturnal.com/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
    <link rel="stylesheet" href="http://www.eternallynocturnal.com/foundation/css/foundation.css">
    <link rel="stylesheet" href="http://www.eternallynocturnal.com/foundation/css/normalize.css">
 
@@ -22,6 +20,9 @@
       margin:0;
       width: 100%;
       font-family:'Lato', sans-serif;
+            background-image: url("http://www.eternallynocturnal.com/images/witeskull.png");
+      background-repeat: repeat;
+      background-size: 10%;
       text-align:center;
       background-color: #800000; 
       color: #ffffff;
@@ -30,6 +31,7 @@
     .mainbody{
       width: 80%;
       border-radius:30px;
+
       margin-left: 10%;
       background-color: #000000;
       color: #ffffff;
@@ -46,7 +48,6 @@
 
     a, a:visited {
       text-decoration:none;
-      color:#ffffff;
     }
 
     h1 {
@@ -68,23 +69,30 @@
   <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>Eternally Nocturnal Store
-          <div class="right-small tab-bar-section"></div>
+        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+<div class="right tab-bar-section"></div>
       </section>
-
-
+<section class="middle tab-bar-section">
+        <h1 class="title">Eternally Nocturnal Store</h1>
+      </section>
 
     </nav>
 
     <aside class="left-off-canvas-menu">
       <ul class="off-canvas-list">
+
         <li><img src="http://www.eternallynocturnal.com/images/witeskull.png"></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/sales">Sales & Upcoming Items</a></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/hoodies">Hoodies</a></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/3quarter">3/4 Sleeves</a></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/tanks">Tanks & Tees</a></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/accessories">Accessories</a></li>
-          <li><a href="http://www.eternallynocturnal.com/webstore/public/all">Everything</a></li>
+
+<?php $categories = ClothingCategory::select('category_name')->distinct()->get();?>
+
+        @foreach($categories as $cats)
+
+            <?php $itemtype = ClothingCategory::where('category_name', $cats->category_name)->pluck('item_type');?>
+
+        <li>{{link_to_route('type_sort', $cats->category_name, array('type' => $itemtype))}}</a></li>
+        @endforeach
+          <li><a href="http://www.eternallynocturnal.com/webstore/public/list/products/sale">Sales & Upcoming Items</a></li>
+
           <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
 <input type="hidden" name="cmd" value="_s-xclick">
 
@@ -113,7 +121,7 @@
 
 </script>
 
-<div class="mainbody">
+<div class="mainbody" height="100%">
 @yield('content')
 </div>
 
@@ -129,7 +137,7 @@
 
 
    <script src="http://www.eternallynocturnal.com/bootstrap/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <script src="http://www.eternallynocturnal.com/foundation/js/vendor/jquery.js"></script>
   <script src="http://www.eternallynocturnal.com/foundation/js/foundation.min.js"></script>
 

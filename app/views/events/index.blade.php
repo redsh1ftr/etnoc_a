@@ -1,1 +1,8 @@
-F:\PHP\htdocs\etnoc_a\app/views/events/index.blade.php
+@extends(layouts.master)
+
+@section('content')
+
+stuff
+
+@stop
+
