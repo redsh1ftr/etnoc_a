@@ -78,7 +78,7 @@
 @endif
 
 @if($prod->inventoryCheck('xxlarge') > '')		
-			<option value="XX-Large">XX-Large (37.99)</option>			
+			<option value="XX-Large">XX-Large </option>			
 @endif
 
 </select>

@@ -13,8 +13,9 @@
 
 /////
 
+Route::model('product', 'Product');
 
-
+Route::model('inventory', 'Inventory');
 
 ////
 
@@ -71,6 +72,8 @@ Route::resource('products', 'ProductsController');
 
 Route::resource('events', 'EventsController');
 
+Route::resource('inventory', 'InventoriesController');
+
 
 
 Route::get('/list/products/{type}', array('as' => 'type_sort', 'uses' => 'ProductsController@type'));
@@ -81,8 +84,7 @@ Route::get('/list/products/{type}', array('as' => 'type_sort', 'uses' => 'Produc
 
 
 
-Route::model('products', 'Product');
-Route::model('inventory', 'Inventory');
+
 
 
 

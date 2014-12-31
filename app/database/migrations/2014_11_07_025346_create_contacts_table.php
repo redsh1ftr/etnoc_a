@@ -31,6 +31,7 @@ class CreateContactsTable extends Migration {
 			$table->string('instagram');
 			$table->string('linkedin');
 			$table->string('website');
+			$table->text('notes');
 			$table->timestamps();
 		});
 	}

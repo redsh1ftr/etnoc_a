@@ -197,8 +197,11 @@ class ProductsController extends \BaseController {
 	public function edit($id)
 	{
 		$product = Product::find($id);
+		$inventory = Inventory::where('item_id', $id)->first();
+		$price = Price::where('item_id', $id)->first();
+		$cost = Cost::where('item_id', $id)->first();
 
-		return View::make('products.edit', compact('product'));
+		return View::make('products.edit', compact('product', 'inventory', 'price', 'cost'));
 
 	}
 
@@ -210,18 +213,44 @@ class ProductsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$product = Product::findOrFail($id);
 
-		$validator = Validator::make($data = Input::all(), Product::$rules);
+		$prod = Product::findOrFail($id);
+		$inv = Inventory::where('item_id', $id)->first();
+		$price = Price::where('item_id', $id)->first();
 
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+		$prod->name = Input::get('name');
+		$prod->description = Input::get('description');
+		$prod->type = Input::get('type');
+		$prod->sale = Input::get('sale');
+		$prod->paypal = Input::get('paypal');
+		$prod->upcoming = Input::get('upcoming');
+		$prod->preorder = Input::get('preorder');
 
-		$product->update($data);
+		$prod->save();
 
-		return Redirect::route('products.index');
+
+		$inv->xsmall = Input::get('xsmall');
+		$inv->small = Input::get('small');
+		$inv->medium = Input::get('medium');
+		$inv->large = Input::get('large');
+		$inv->xlarge = Input::get('xlarge');
+		$inv->xxlarge = Input::get('xxlarge');
+		$inv->xxxlarge = Input::get('xxxlarge');
+
+		$inv->save();
+
+		$price->xsmall = Input::get('xsmall_price');
+		$price->small = Input::get('small_price');
+		$price->medium = Input::get('medium_price');
+		$price->large = Input::get('large_price');
+		$price->xlarge = Input::get('xlarge_price');
+		$price->xxlarge = Input::get('xxlarge_price');
+		$price->xxxlarge = Input::get('xxxlarge_price');
+
+		$price->save();
+
+
+		return Redirect::back();
 	}
 
 	/**

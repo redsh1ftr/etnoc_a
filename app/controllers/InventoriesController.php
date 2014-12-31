@@ -88,7 +88,7 @@ class InventoriesController extends \BaseController {
 
 		$inventory->update($data);
 
-		return Redirect::route('inventories.index');
+		return Redirect::back();
 	}
 
 	/**

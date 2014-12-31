@@ -57,6 +57,9 @@
     }
   </style>
 
+
+  @section('style')
+
 </head>
 
 
