@@ -76,8 +76,9 @@ Route::resource('events', 'EventsController');
 Route::get('/list/products/{type}', array('as' => 'type_sort', 'uses' => 'ProductsController@type'));
 
 
+Route::resource('events', 'EventsController');
 
-
+Route::resource('contact_types', 'ContactTypesController');
 
 
 

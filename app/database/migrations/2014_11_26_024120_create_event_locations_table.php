@@ -29,6 +29,9 @@ class CreateEventLocationsTable extends Migration {
 			$table->string('facebook');
 			$table->string('twitter');
 			$table->string('instagram');
+			$table->string('image_1');
+			$table->string('image_2');
+			$table->string('image_3');
 			$table->timestamps();
 		});
 	}
