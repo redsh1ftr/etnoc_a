@@ -20,9 +20,6 @@
       margin:0;
       width: 100%;
       font-family:'Lato', sans-serif;
-            background-image: url("http://www.eternallynocturnal.com/images/witeskull.png");
-      background-repeat: repeat;
-      background-size: 10%;
       text-align:center;
       background-color: #800000; 
       color: #ffffff;
@@ -58,7 +55,9 @@
   </style>
 
 
+
   @section('style')
+
 
 </head>
 

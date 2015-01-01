@@ -18,8 +18,8 @@ class CreateEventsTable extends Migration {
 			$table->string('event_name');
 			$table->text('description');
 			$table->string('contact_id');
-			$table->timedate('start_date');
-			$table->timedate('end_date');
+			$table->datetime('start_date');
+			$table->datetime('end_date');
 			$table->string('event_description');
 			$table->string('event_logo_image_1');
 			$table->string('event_logo_image_2');

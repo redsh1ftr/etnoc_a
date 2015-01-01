@@ -1,0 +1,1 @@
+C:\xampp\htdocs\etnoc_a\app/views/merchincomes/index.blade.php

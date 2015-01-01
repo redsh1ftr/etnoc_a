@@ -9,9 +9,9 @@ class ContactTypesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$contacttypes = Contacttype::all();
+		$contact_types = Contacttype::all();
 
-		return View::make('contacttypes.index', compact('contacttypes'));
+		return View::make('contact_types.index', compact('contact_types'));
 	}
 
 	/**
@@ -21,7 +21,7 @@ class ContactTypesController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('contacttypes.create');
+		return View::make('contact_types.create');
 	}
 
 	/**
@@ -40,7 +40,7 @@ class ContactTypesController extends \BaseController {
 
 		Contacttype::create($data);
 
-		return Redirect::route('contacttypes.index');
+		return Redirect::route('contact_types.index');
 	}
 
 	/**
@@ -53,7 +53,7 @@ class ContactTypesController extends \BaseController {
 	{
 		$contacttype = Contacttype::findOrFail($id);
 
-		return View::make('contacttypes.show', compact('contacttype'));
+		return View::make('contact_types.show', compact('contacttype'));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class ContactTypesController extends \BaseController {
 	{
 		$contacttype = Contacttype::find($id);
 
-		return View::make('contacttypes.edit', compact('contacttype'));
+		return View::make('contact_types.edit', compact('contacttype'));
 	}
 
 	/**
@@ -88,7 +88,7 @@ class ContactTypesController extends \BaseController {
 
 		$contacttype->update($data);
 
-		return Redirect::route('contacttypes.index');
+		return Redirect::route('contact_types.index');
 	}
 
 	/**
@@ -101,7 +101,7 @@ class ContactTypesController extends \BaseController {
 	{
 		Contacttype::destroy($id);
 
-		return Redirect::route('contacttypes.index');
+		return Redirect::route('contact_types.index');
 	}
 
 }
