@@ -43,6 +43,7 @@ class OrdersController extends \BaseController {
 		return Redirect::route('orders.index');
 	}
 
+
 	/**
 	 * Display the specified order.
 	 *

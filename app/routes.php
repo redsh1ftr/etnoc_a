@@ -19,6 +19,8 @@ Route::model('inventory', 'Inventory');
 
 //// RESOURCES
 
+Route::resource('administrator', 'AdministratorsController');
+
 Route::resource('picture', 'PicturesController');
 
 Route::resource('band', 'BandsController');
@@ -34,6 +36,8 @@ Route::resource('products', 'ProductsController');
 Route::resource('events', 'EventsController');
 
 Route::resource('inventory', 'InventoriesController');
+
+
 
 ////// RANDOM ROUTES
 

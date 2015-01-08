@@ -25,56 +25,21 @@
 <table>
 
 <th>{{Form::label('sizes', 'Available Sizes:')}}</th><tr>
+	
+	<?php $sizes = Size::all();?>
 
-
-<td>X-Small
-		<td>{{Form::text('xsmall', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('xsmall_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('xsmall_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>Small
-		<td>{{Form::text('small', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('small_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('small_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>Medium
-		<td>{{Form::text('medium', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('medium_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('medium_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>Large
-		<td>{{Form::text('large', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('large_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('large_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>X-Large		
-		<td>{{Form::text('xlarge', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('xlarge_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('xlarge_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>XX-Large		
-		<td>{{Form::text('xxlarge', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('xxlarge_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('xxlarge_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-
-
-<td>XXX-Large		
-		<td>{{Form::text('xxxlarge', '', array('placeholder' => 'Quantity...(if available)'))}}
-			<td>{{Form::text('xxxlarge_price', '', array('placeholder' => 'Price...'))}}
-			<td>{{Form::text('xxxlarge_cost', '', array('placeholder' => 'Cost...'))}}<tr>
-		
-		
+	@foreach($sizes as $size)
+	<td>{{Str::title($size->size)}}
+	<td>{{Form::text($size, '', array('placeholder' => 'Quantity...(if available)'))}}
+	<td>{{Form::text("$size"."_cost", '', array('placeholder' => 'Order Cost...'))}}
+	<td>{{Form::text("$size"."_price", '', array('placeholder' => 'Sale Price...'))}}<tr>
+	@endforeach
 			
 </table>
 
 <br><br>
 <table>
-<td>{{Form::label('description', 'Description')}}<td>{{ Form::textarea('description') }}
+<td>{{ Form::textarea('description', '', array('placeholder' => 'Product Description')) }}
 </table>
 <br><br>
 <table>
@@ -83,6 +48,7 @@
 	<td>{{Form::label('image_3', 'Image 3')}}<td> {{ Form::file('image_3')}}<tr>
 </table>
 <br><br>
-{{Form::submit('Create Product')}}
+
+<button type="submit" class="btn-large btn-inverse">{{"Create Product"}}</button>
 
 {{Form::close()}}

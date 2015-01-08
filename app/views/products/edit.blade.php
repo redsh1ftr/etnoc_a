@@ -17,8 +17,7 @@
           <option value="hoodie">Hoodie</option>
           <option value="accessory">Accessory</option>
         </select>
-
-
+<br><br>
 
 {{ Form::hidden('sale', false) }}
 {{ Form::hidden('upcoming', false) }}
