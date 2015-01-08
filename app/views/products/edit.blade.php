@@ -44,8 +44,8 @@
 	<div class="row">
 		<div class="small-3 columns">{{Str::title($sizes)}}</div>
 		<div class="small-3 columns">{{Form::text($sizes, $product->inventoryCheck($sizes))}}</div>
-		<div class="small-3 columns">{{Form::text('xsmall_cost', $cost->xsmall)}}</div>
-		<div class="small-3 columns">{{Form::text('xsmall_price', $price->xsmall)}}</div>
+		<div class="small-3 columns">{{Form::text("$sizes"."_cost", $product->costCheck($sizes))}}</div>
+		<div class="small-3 columns">{{Form::text("$sizes"."_price", $product->priceCheck($sizes))}}</div>
 		
 	</div>
 
@@ -57,9 +57,9 @@
 
 
 
-{{Form::submit("Update $product->name")}}
+<button type="submit" class="btn-large btn-inverse">{{"Update $product->name"}}</button>
 {{Form::close()}}
 
-
+{{}}
 
 @stop

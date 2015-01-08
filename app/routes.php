@@ -11,13 +11,34 @@
 |
 */
 
-/////
+///// MODEL ROUTES
 
 Route::model('product', 'Product');
 
 Route::model('inventory', 'Inventory');
 
-////
+//// RESOURCES
+
+Route::resource('picture', 'PicturesController');
+
+Route::resource('band', 'BandsController');
+
+Route::resource('events', 'EventsController');
+
+Route::resource('contact_types', 'ContactTypesController');
+
+Route::resource('customers', 'CustomersController');
+
+Route::resource('products', 'ProductsController');
+
+Route::resource('events', 'EventsController');
+
+Route::resource('inventory', 'InventoriesController');
+
+////// RANDOM ROUTES
+
+
+
 
 Route::get('/sales', function()
 {
@@ -66,22 +87,11 @@ Route::get('/saddle', function()
 	return View::make('saddle');
 });
 
-Route::resource('customers', 'CustomersController');
-
-Route::resource('products', 'ProductsController');
-
-Route::resource('events', 'EventsController');
-
-Route::resource('inventory', 'InventoriesController');
 
 
 
 Route::get('/list/products/{type}', array('as' => 'type_sort', 'uses' => 'ProductsController@type'));
 
-
-Route::resource('events', 'EventsController');
-
-Route::resource('contact_types', 'ContactTypesController');
 
 
 

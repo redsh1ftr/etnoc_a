@@ -217,6 +217,7 @@ class ProductsController extends \BaseController {
 		$prod = Product::findOrFail($id);
 		$inv = Inventory::where('item_id', $id)->first();
 		$price = Price::where('item_id', $id)->first();
+		$cost = Cost::where('item_id', $id)->first();
 
 		$prod->name = Input::get('name');
 		$prod->description = Input::get('description');
@@ -248,6 +249,16 @@ class ProductsController extends \BaseController {
 		$price->xxxlarge = Input::get('xxxlarge_price');
 
 		$price->save();
+
+		$cost->xsmall = Input::get('xsmall_cost');
+		$cost->small = Input::get('small_cost');
+		$cost->medium = Input::get('medium_cost');
+		$cost->large = Input::get('large_cost');
+		$cost->xlarge = Input::get('xlarge_cost');
+		$cost->xxlarge = Input::get('xxlarge_cost');
+		$cost->xxxlarge = Input::get('xxxlarge_cost');
+
+		$cost->save();
 
 
 		return Redirect::back();
