@@ -44,8 +44,9 @@
 	<div class="row">
 		<div class="small-3 columns">{{Str::title($sizes)}}</div>
 		<div class="small-3 columns">{{Form::text($sizes, $product->inventoryCheck($sizes))}}</div>
-		<div class="small-3 columns">{{ Form::label("$sizes Price", 'Price', array('style' => 'color:#ffffff'))}}{{Form::text('xsmall_price', $price->xsmall)}}</div>
-		<div class="small-3 columns">{{ Form::label("$sizes Cost", 'Cost', array('style' => 'color:#ffffff'))}}{{Form::text('xsmall_cost', $cost->xsmall)}}</div>
+		<div class="small-3 columns">{{Form::text('xsmall_cost', $cost->xsmall)}}</div>
+		<div class="small-3 columns">{{Form::text('xsmall_price', $price->xsmall)}}</div>
+		
 	</div>
 
 @endforeach
