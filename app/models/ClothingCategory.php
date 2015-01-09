@@ -12,4 +12,11 @@ class ClothingCategory extends \Eloquent {
 
 	protected $table = 'clothing_categories';
 
+	public function getTypes(){
+		$cats = ClothingCategory::all();
+
+		return($cats);
+
+	}
+
 }

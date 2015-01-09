@@ -8,30 +8,41 @@
 <center>
 
 <dl class="tabs" data-tab>
-  <dd class="active"><a href="#panel1">New Product</a></dd>
-  <dd><a href="#panel2">Current Products</a></dd>
-  <dd><a href="#panel3">New Event</a></dd>
-  <dd><a href="#panel2">Current & Past Events</a></dd>
-  <dd><a href="#panel4">New Contact</a></dd>
-  <dd><a href="#panel4">New Order</a></dd>
-  <dd><a href="#panel4">Previous Orders</a></dd>
+	<dd class="active">
+		<a href="#merch">Merch</a></dd>
+    <dd><a href="#newproduct">New Product</a></dd>
+    <dd><a href="#events">Events</a></dd>
+    <dd><a href="#newevent">New Event</a></dd>
+	<dd><a href="#contacts">Contacts</a></dd>
+    <dd><a href="#newcontacts">New Contact</a></dd>
+    <dd><a href="#orders">Orders</a></dd>
+    <dd><a href="#neworder">New Order</a></dd>
+
 
 
 </dl>
 <div class="tabs-content">
-  <div class="content active" id="panel1">
-  			{{View::make('products.create')}}
-  </div>
-  <div class="content" id="panel2">
+
+  <div class="content active" id="merch">
   			{{View::make('products.list')}}
-  			  {{View::make('events.create')}}
   </div>
-  <div class="content" id="panel3">
+
+  <div class="content" id="newproduct">
+  			{{View::make('products.create')}}
+  			  
+  </div>
+  <div class="content" id="events">
     		  {{View::make('contacts.create')}}
   </div>
-  <div class="content" id="panel4">
-   			  {{View::make('products.list')}}
+
+  <div class="content" id="newevents">
+   			  {{View::make('events.create')}}
   </div>
+
+ 	<div class="content" id="newevents">
+   			  {{View::make('events.create')}}
+  	</div>
+
 </div>
 
 </center>
