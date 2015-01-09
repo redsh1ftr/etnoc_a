@@ -1,6 +1,6 @@
 <?php
 
-class Order extends \Eloquent {
+class OrderItem extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
@@ -8,9 +8,6 @@ class Order extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = ['name'];
-
-
-	protected $table = 'orders';
+	protected $fillable = [];
 
 }

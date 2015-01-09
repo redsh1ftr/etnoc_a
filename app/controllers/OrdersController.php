@@ -31,7 +31,7 @@ class OrdersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Order::$rules);
+		$validator = Validator::make($data = Input::except('_token'), Order::$rules);
 
 		if ($validator->fails())
 		{

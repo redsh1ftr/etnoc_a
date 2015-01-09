@@ -1,8 +1,7 @@
-@extends(layouts.master)
 
-@section('content')
 
-stuff
+@foreach(Events::get() as $event)
 
-@stop
+	{{link_to_route('events.edit', $event->name, $event->id)}}
 
+@endforeach
