@@ -37,6 +37,8 @@ Route::resource('events', 'EventsController');
 
 Route::resource('inventory', 'InventoriesController');
 
+Route::resource('contacts', 'ContactsController');
+
 
 
 ////// RANDOM ROUTES

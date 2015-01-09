@@ -8,6 +8,33 @@ class Contact extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = [];
+	protected $fillable = [
+	'type',
+	'f_name',
+	'l_name',
+	'nickname',
+	'email',
+	'phone',
+	'street1',
+	'street2',
+	'city',
+	'state',
+	'zip',
+	'facebook',
+	'twitter',
+	'instagram',
+	'linkedin',
+	'website',
+	'notes',
+	];
 
+
+	protected $table = 'contacts';
+
+
+	public function lastName(){
+		$lastname = Contact::orderBy('l_name')->get();
+
+		return($lastname);
+	}
 }
