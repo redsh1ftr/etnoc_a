@@ -214,10 +214,8 @@ class ProductsController extends \BaseController {
 	public function update($id)
 	{
 
-		$prod = Product::findOrFail($id);
-		$inv = Inventory::where('item_id', $id)->first();
-		$price = Price::where('item_id', $id)->first();
-		$cost = Cost::where('item_id', $id)->first();
+		$prod = Product::findOrFail($id);		
+	
 
 		$prod->name = Input::get('name');
 		$prod->description = Input::get('description');
@@ -229,6 +227,7 @@ class ProductsController extends \BaseController {
 
 		$prod->save();
 
+		$inv = Inventory::where('item_id', $id)->first();
 
 		$inv->xsmall = Input::get('xsmall');
 		$inv->small = Input::get('small');
@@ -240,6 +239,8 @@ class ProductsController extends \BaseController {
 
 		$inv->save();
 
+		$price = Price::where('item_id', $id)->first();
+
 		$price->xsmall = Input::get('xsmall_price');
 		$price->small = Input::get('small_price');
 		$price->medium = Input::get('medium_price');
@@ -250,6 +251,9 @@ class ProductsController extends \BaseController {
 
 		$price->save();
 
+
+		$cost = Cost::where('item_id', $id)->first();
+		
 		$cost->xsmall = Input::get('xsmall_cost');
 		$cost->small = Input::get('small_cost');
 		$cost->medium = Input::get('medium_cost');
