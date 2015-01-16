@@ -8,7 +8,7 @@ class Order extends \Eloquent {
 	];
 
 	// Don't forget to fill this array
-	protected $fillable = ['name'];
+	protected $fillable = ['vendor_id', ];
 
 
 	protected $table = 'orders';

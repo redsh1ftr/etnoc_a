@@ -34,7 +34,7 @@
 	<div class="panel">
 		<div class="row">
 			<div class="small-6 columns">{{Str::title($size->size)}}</div>
-			<div class="small-6 columns">{{Form::text($size, '', array('placeholder' => 'Inventory....'))}}</div>
+			<div class="small-6 columns">{{Form::text('size', '', array('placeholder' => 'Inventory....'))}}</div>
 			<div class="small-6 columns">{{Form::text("$size"."_cost", '', array('placeholder' => 'Order Cost...'))}}</div>
 			<div class="small-6 columns">{{Form::text("$size"."_price", '', array('placeholder' => 'Sale Price...'))}}</div>
 		</div>

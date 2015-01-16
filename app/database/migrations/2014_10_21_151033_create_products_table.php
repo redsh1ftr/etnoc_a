@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration {
 			$table->string('sale')->nullable();
 			$table->string('paypal');
 			$table->string('preorder')->nullable();
-			$table->string('upcomming')->nullable();
+			$table->string('upcoming')->nullable();
 			$table->timestamps();
 		});
 	}

@@ -1,1 +1,25 @@
-F:\PHP\htdocs\etnoc_a\app/views/contacts/index.blade.php
+
+
+
+
+<div class="maincon">
+
+	<div class="left">
+
+		@foreach($contacts as $contact)
+
+			{{$contact->fname}}<br>
+
+		@endforeach
+
+	</div>
+
+		<div class="right">
+
+			{{View::make('contacts.create')}}
+
+		
+	</div>
+
+</div>
+
