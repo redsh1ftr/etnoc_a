@@ -5,12 +5,7 @@
 <div class="maincon">
 
 	<div class="left">
-
-		@foreach($contacts as $contact)
-
-			{{$contact->fname}}<br>
-
-		@endforeach
+Contact List Placeholder
 
 	</div>
 
