@@ -1,8 +1,5 @@
 @extends('layouts.master')
 
-@section('style')
-
-@stop
 
 @section('content')
 <center>
