@@ -20,21 +20,7 @@
 
 
 
-{{$prod->name}} - 
 
-
-	@if($prod->upcoming > '')  (COMING SOON!)
-
-	@else ${{$prod->priceCheck('small')}}
-
-	@endif
-
-	@if($prod->sale > '') (ON SALE!)
-	@endif
-
-
-	@if($prod->preorder > '') (COMING SOON - PRE-ORDER ONLY!)
-	@endif
 
 
 
@@ -43,9 +29,14 @@
 
 <ul class="clearing-thumbs medium-block-grid-1" data-clearing>
 @foreach($prod->getPictures() as $pic)
-  <li><a href="http://www.eternallynocturnal.com/webstore/public/images/{{$pic->image_1}}"><img data-caption="{{$prod->name}}" src="http://www.eternallynocturnal.com/webstore/public/images/{{$pic->image_1}}"></a></li>
-@endforeach
-</ul>
+
+<a href="#" data-reveal-id="Mod_{{$pic->id}}"><img style="max-width:500px;max-height:500px;" data-caption="{{$prod->name}}" src="http://www.eternallynocturnal.com/webstore/public/images/{{$pic->image_1}}"></a>
+
+
+<div id="Mod_{{$pic->id}}" class="reveal-modal" data-reveal>
+<ul class="clearing-thumbs medium-block-grid-1" data-clearing>
+ <li><a href="http://www.eternallynocturnal.com/webstore/public/images/{{$pic->image_1}}"><img style="max-width:500px;max-height:500px;"  data-caption="{{$prod->name}}" src="http://www.eternallynocturnal.com/webstore/public/images/{{$pic->image_1}}"></a></li>
+
 
 @if(!$prod->upcoming > '')
 <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -111,6 +102,37 @@
 </form></div></div>
 <br><br>
 @endif
+
+
+
+
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<br>
+
+{{$prod->name}} - 
+
+
+	@if($prod->upcoming > '')  (COMING SOON!)
+
+	@else ${{$prod->priceCheck('small')}}
+
+	@endif
+
+	@if($prod->sale > '') (ON SALE!)
+	@endif
+
+
+	@if($prod->preorder > '') (COMING SOON - PRE-ORDER ONLY!)
+	@endif
+
+
+
+
+@endforeach
+</ul>
+
 @endforeach
 
 
