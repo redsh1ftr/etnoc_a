@@ -29,7 +29,10 @@
 	  <div class="content" id="newevent">
 	   			  {{View::make('events.create')}}
 	  </div>
-
+	
+	<div class="content" id="newcontact">
+   			  {{View::make('contacts.create')}}
+  	</div>
  	
  	<div class="content" id="orders">
    			  {{View::make('orders.index')}}

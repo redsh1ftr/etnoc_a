@@ -142,8 +142,8 @@
 
 </div>
 
-<div class="row">
-	<center style="color:#000000">
+<div class="row" style=" width:80%;">
+	<center style="color:#000000;">
 	{{Form::textarea('notes')}}
 	</center>
 </div>
