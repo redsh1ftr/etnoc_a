@@ -33,8 +33,8 @@
 
 
 <div class="row">
-	<div class="large-6 columns">{{Form::text('fname', '', array('placeholder' => 'First Name'))}}</div>
-	<div class="large-6 columns">{{Form::text('lname', '', array('placeholder' => 'Last Name'))}}</div>
+	<div class="large-6 columns">{{Form::text('f_name', '', array('placeholder' => 'First Name'))}}</div>
+	<div class="large-6 columns">{{Form::text('l_name', '', array('placeholder' => 'Last Name'))}}</div>
 </div>
 
 
@@ -78,7 +78,7 @@
 </div>
 
 <div class="row">
-	{{Form::textarea('notes', '', array('placeholder' => 'Notes'))}}
+	{{Form::textarea('notes', '', array('placeholder' => 'Notes', 'style' => 'color:#000000'))}}
 </div>
 <br>
 
