@@ -1,0 +1,1 @@
+F:\PHP\htdocs\etnoc_a\app/views/companies/index.blade.php
