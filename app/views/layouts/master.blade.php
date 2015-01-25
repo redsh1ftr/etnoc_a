@@ -27,7 +27,6 @@
 
     .mainbody{
       width: 80%;
-      min-height: 900px;
       border-radius:30px;
 
       margin-left: 10%;
@@ -69,24 +68,16 @@
 
 
 <div class="off-canvas-wrap" data-offcanvas>
-
-  <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
     <nav class="tab-bar">
       <section class="left-small">
         <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+<div class="right tab-bar-section"></div>
       </section>
-
-      <section class="middle tab-bar-section">
-
-
-        
+<section class="middle tab-bar-section">
         <h1 class="title">Eternally Nocturnal Store</h1>
       </section>
 
-      <section class="right-small">
-        <a class="right-off-canvas-toggle menu-icon" href="#"><span></span></a>
-      </section>
     </nav>
 
     <aside class="left-off-canvas-menu">
@@ -117,9 +108,6 @@
 
 
 
-@yield('right_menu')
-
-
     <section class="main-section">
 
 
@@ -135,10 +123,8 @@
 
 </script>
 
-<div class="mainbody" min-height="100%">
-
+<div class="mainbody" height="100%">
 @yield('content')
-
 </div>
 
 

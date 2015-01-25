@@ -13,7 +13,25 @@
 </div>
 
 
-{{Form::hidden('state', 'MI')}}
+
+
+
+
+<br>
+<div class="row">
+	<div class="small-6 columns"></div>
+</div>
+
+
+
+<div class="row">
+	<div class="small-6 columns"></div>
+	<div class="small-6 columns"></div>
+</div>
+
+
+
+
 
 
 <div class="row">
@@ -28,44 +46,24 @@
 
 
 <div class="row">
-	<div class="small-6 columns">{{Form::text('street1', '', array('placeholder' => 'Street Address'))}}</div>
-	<div class="small-6 columns">{{Form::text('street2', '', array('placeholder' => 'Street Address (apt, ste, etc.)'))}}</div>
+	<div class="small-6 columns">{{Form::text('phone', '', array('placeholder' => 'Phone'))}}</div>
+	<div class="small-6 columns"></div>
 </div>
 
 
-<div class="row">		
-	<div class="small-6 columns">{{Form::text('city', '', array('placeholder' => 'City'))}}</div>
-	
-	<div class="small-3 columns">{{Form::text('state', '', array('placeholder' => 'State'))}}</div>
-	<div class="small-3 columns">{{Form::text('zip', '', array('placeholder' => 'Zip Code'))}}</div>
-</div>
-
-<div class="row">
-	
-	<div class="small-1 columns"><span class="icon-facebook"></span></div>
-		<div class="small-5 columns">{{Form::text('facebook', '', array('placeholder' => 'Paste Facebook link here'))}}</div>
-	
-	<div class="small-1 columns"><span class="icon-twitter"></span></div>
-		<div class="small-5 columns">{{Form::text('twitter', '', array('placeholder' => 'Paste Twitter link here'))}}</div>
-</div>
-
-<div class="row">	
-	<div class="small-1 columns"><span class="icon-instagram"></span></div>	
-		<div class="small-5 columns">{{Form::text('instagram', '', array('placeholder' => 'Paste IG link here'))}}</div>
-	<div class="small-1 columns"><span class="icon-globe"></span></div>		
-		<div class="small-5 columns">{{Form::text('website', '', array('placeholder' => 'Pase Website link here'))}}</div>
 
 
-</div>
-
-<div class="row">
-	{{Form::textarea('notes', '', array('placeholder' => 'Notes'))}}
-</div>
-<br>
 
 
-<button type="submit" class="btn-large btn-inverse">Create New Contact</button>
+
+
+{{Form::text('phone', '', array('placeholder' => 'Phone'))}}
+{{Form::text('', '', array('placeholder' => ''))}}
+{{Form::text('', '', array('placeholder' => ''))}}
+{{Form::text('', '', array('placeholder' => ''))}}
+{{Form::text('', '', array('placeholder' => ''))}}
+{{Form::text('', '', array('placeholder' => ''))}}
+
+
 
 {{Form::close()}}
-
-

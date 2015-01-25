@@ -1,19 +1,5 @@
 @extends('layouts.master')
 
-@section('right_menu')
-
-	<aside class="right-off-canvas-menu">
-	      <ul class="off-canvas-list">
-
-	        <li><img src="http://www.eternallynocturnal.com/images/witeskull.png"></li>
-	        <li>TEST</li>
-	 	</ul>
-	</aside>
-
-
-@stop
-
-
 
 @section('content')
 <center>
@@ -35,7 +21,7 @@
 <div class="tabs-content">
 
 	  <div class="content active" id="merch">
-	  			{{View::make('administrators.product_list')}}
+	  			{{View::make('products.list')}}
 	  </div>
 
 	  <div class="content" id="newproduct">
