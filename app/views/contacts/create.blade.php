@@ -1,10 +1,12 @@
-{{Form::open(array('route' => 'contacts.create', 'method' => 'post', 'files' => 'true'))}}
+{{ Form::open(array('action' => 'ContactsController@store', 'files' => true)) }}
+
 
 <div class="row">
 		<div class="small-6 columns"><div style="color:#000000">
-			<select><option>Choose Contact Type..GENERATE FROM LISTTTTTT..</option>
-			<option value="ARTIST">Artist</option>
-			<option value="PHOTOGRAPHER">Photographer</option>
+			<select name="type">
+				<option>Choose Contact Type..GENERATE FROM LISTTTTTT..</option>
+				<option value="ARTIST">Artist</option>
+				<option value="PHOTOGRAPHER">Photographer</option>
 			</select>
 
 			</div>
