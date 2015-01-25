@@ -26,7 +26,7 @@
 
 
 
-<div id="Modal_{{$contact->id}}" class="reveal-modal" data-reveal> 
+<div id="Modal_{{$contact->id}}" class="reveal-modal" style="max-height:80%;overflow-y:scroll;" data-reveal> 
 
 
 <ul class="tabs" data-tab >
@@ -161,7 +161,7 @@
 </div>
 
 <a class="close-reveal-modal">&#215;</a>
-</div>
+
 
 
 </div>
