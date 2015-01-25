@@ -281,4 +281,11 @@ class ProductsController extends \BaseController {
 		return Redirect::route('products.index');
 	}
 
+public function productmanager()
+	{
+		return View::make('administrators.product_list');
+	}
+
+
+
 }

@@ -44,6 +44,7 @@ Route::resource('orders', 'OrdersController');
 
 ////// RANDOM ROUTES
 
+Route::get('/productmanager', array('as' => 'product_list', 'uses' => 'ProductsController@productmanager'));
 
 
 

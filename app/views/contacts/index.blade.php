@@ -26,7 +26,7 @@
 
 
 
-<div id="Modal_{{$contact->id}}" class="reveal-modal" style="max-height:80%;overflow-y:scroll;" data-reveal> 
+<div id="Modal_{{$contact->id}}" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;" data-reveal> 
 
 
 <ul class="tabs" data-tab >
@@ -40,7 +40,7 @@
 
 
 <div class="tabs-content">
-  <div class="content active" id="panel1" style="background-color:#000000;color:#ffffff">
+  <div class="content active" style="height:700px" id="panel1" style="background-color:#000000;color:#ffffff">
     
 
     	<div class="row">

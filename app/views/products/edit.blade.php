@@ -1,6 +1,13 @@
 @extends('layouts.master')
 
 
+@section('right_menu')
+
+{{View::make('layouts.admin_menu')}}
+
+@stop
+
+
 
 @section('content')
 

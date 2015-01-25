@@ -19,7 +19,7 @@
                       <ul class="right-submenu">
                           <li><img src="http://www.eternallynocturnal.com/images/witeskull.png"></li>
                             <li class="back"><a href="#">Back</a></li>
-                              <li>{{link_to_route('products.index', 'View/Edit Shop')}}</li>
+                              <li>{{link_to_route('product_list', 'View/Edit Shop')}}</li>
                               <li>{{link_to_route('products.create', 'Add New Product')}}</li>
             
                       </ul>
