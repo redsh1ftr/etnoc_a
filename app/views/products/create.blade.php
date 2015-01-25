@@ -16,9 +16,9 @@
 
 
     <div class="large-6 columns">
-      {{ Form::checkbox('sale', '1')}}<label style="color:#ffffff" for="sale">On Sale</label><br>
-      {{ Form::checkbox('upcoming', '1')}}<label style="color:#ffffff" for="upcoming">Upcoming</label><br>
-      {{ Form::checkbox('preorder', '1')}}<label style="color:#ffffff" for="preorder">Preorder</label><br>
+      {{ Form::checkbox('sale', '1')}}<label style="color:#ffffff" for="sale">On Sale</label>
+      {{ Form::checkbox('upcoming', '1')}}<label style="color:#ffffff" for="upcoming">Upcoming</label>
+      {{ Form::checkbox('preorder', '1')}}<label style="color:#ffffff" for="preorder">Preorder</label>
     </div>
 
  
@@ -33,10 +33,10 @@
 	@foreach($sizes as $size)
 	<div class="panel">
 		<div class="row">
-			<div class="small-6 columns">{{Str::title($size->size)}}</div>
-			<div class="small-6 columns">{{Form::text('size', '', array('placeholder' => 'Inventory....'))}}</div>
-			<div class="small-6 columns">{{Form::text("$size"."_cost", '', array('placeholder' => 'Order Cost...'))}}</div>
-			<div class="small-6 columns">{{Form::text("$size"."_price", '', array('placeholder' => 'Sale Price...'))}}</div>
+			<div class="large-6 columns">{{Str::title($size->size)}}</div>
+			<div class="large-6 columns">{{Form::text('size', '', array('placeholder' => 'Inventory....'))}}</div>
+			<div class="large-6 columns">{{Form::text("$size"."_cost", '', array('placeholder' => 'Order Cost...'))}}</div>
+			<div class="large-6 columns">{{Form::text("$size"."_price", '', array('placeholder' => 'Sale Price...'))}}</div>
 		</div>
 	</div>
 	<br>
@@ -46,12 +46,16 @@
 <td>{{ Form::textarea('description', '', array('placeholder' => 'Product Description')) }}
 </table>
 
-<table>
-	<td>{{Form::label('image_1', 'Main Image')}} <td>{{ Form::file('image_1')}}<tr>
-	<td>{{Form::label('image_2', 'Image 2')}}<td> {{ Form::file('image_2')}}<tr>
-	<td>{{Form::label('image_3', 'Image 3')}}<td> {{ Form::file('image_3')}}<tr>
-</table>
-
+	
+<?php $imagecount = range(2, 10, 1);?>
+		<table>
+			<td>	<div class="large-12 columns" color = "#ffffff"{{Form::label("image_1", "Main Image")}}<td>{{ Form::file("image_1")}}</div>
+		</table>
+	@foreach($imagecount as $nImage)
+		<table>
+			<td>	<div class="large-12 columns" color = "#ffffff"{{Form::label("image_$nImage", "Image $nImage")}}<td>{{ Form::file("image_nImage")}}</div>
+		</table>
+	@endforeach
 
 <button type="submit" class="btn-large btn-inverse">{{"Create Product"}}</button>
 
