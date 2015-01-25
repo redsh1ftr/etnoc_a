@@ -2,9 +2,7 @@
 
 @section('right_menu')
 
-
-<?php $include_right_menu = "YES";?>
-
+{{View::make('layouts.admin_menu')}}
 
 @stop
 
