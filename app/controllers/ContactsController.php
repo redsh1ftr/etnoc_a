@@ -49,11 +49,14 @@ class ContactsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		$contact = Contact::findOrFail($id);
+		$type = Input::get('type');
+		$search = Input::get('search');
 
-		return View::make('contacts.show', compact('contact'));
+		$contacts = Contact::where($type, 'like', $search)->get();
+
+		return View::make('contacts.show', compact('contacts'));
 	}
 
 	/**

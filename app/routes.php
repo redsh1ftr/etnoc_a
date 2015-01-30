@@ -46,7 +46,7 @@ Route::resource('orders', 'OrdersController');
 
 Route::get('/productmanager', array('as' => 'product_list', 'uses' => 'ProductsController@productmanager'));
 
-
+Route::post('/contact/search', array('as' => 'contactSearch', 'uses' => 'ContactsController@show'));
 
 Route::get('/sales', function()
 {

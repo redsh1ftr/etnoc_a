@@ -13,6 +13,21 @@
 <h1>Contact Manager</h1>
 <br>
 
+Search by 
+	
+	{{Form::open(array('route' => 'contactSearch', 'method' => 'post'))}}
+
+	<select name="type"> 
+		<option value="f_name">First Name</option>
+		<option value="nickname">Alias</option>
+		<option value="l_name">Last Name</option>
+
+	</select>
+
+	{{Form::text('search')}}
+	{{Form::submit('serch')}}
+	{{Form::close()}}
+
 @foreach(Contact::all() as $contact)
 
 
