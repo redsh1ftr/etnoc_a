@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stay Awake to Create</title>
-   <link href="http://www.eternallynocturnal.com/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-   <link rel="stylesheet" href="http://www.eternallynocturnal.com/foundation/css/foundation.css">
-   <link rel="stylesheet" href="http://www.eternallynocturnal.com/foundation/css/normalize.css">
+   <link href="//localhost/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/foundation.css">
+   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/normalize.css">
+   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
 
- <script src="http://www.eternallynocturnal.com/foundation/js/vendor/modernizr.js"></script>
+ <script src="//localhost/etnoc_a/public/foundation/js/vendor/modernizr.js"></script>
 
 
   <style>
@@ -151,10 +152,10 @@
 
 
 
-   <script src="http://www.eternallynocturnal.com/bootstrap/js/bootstrap.min.js"></script>
+   <script src="/bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="http://www.eternallynocturnal.com/foundation/js/vendor/jquery.js"></script>
-  <script src="http://www.eternallynocturnal.com/foundation/js/foundation.min.js"></script>
+  <script src="//localhost/etnoc_a/public/foundation/js/vendor/jquery.js"></script>
+  <script src="//localhost/etnoc_a/public/foundation/js/foundation.min.js"></script>
 
   <script>
     $(document).foundation();

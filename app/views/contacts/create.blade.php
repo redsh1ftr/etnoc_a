@@ -1,14 +1,4 @@
-@extends('layouts.master')
 
-@section('right_menu')
-
-{{View::make('layouts.admin_menu')}}
-
-@stop
-
-
-
-@section('content')
 
 <br><br><br>
 
@@ -53,25 +43,25 @@
 
 
 <div class="row">
-	<div class="large-1 columns"><span class="icon-phone"></span></div>
-		<div class="large-5 columns">{{Form::text('phone')}}</div>
-	<div class="large-1 columns"><span class="icon-envelope"></span></div>
-		<div class="large-5 columns">{{Form::text('email')}}</div>
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-telephone"></i></div>
+		<div class="large-5 columns">{{Form::text('phone', '', array('placeholder' => 'XXX-XXX-XXXX'))}}</div>
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-mail"></i></div>
+		<div class="large-5 columns">{{Form::text('email', '', array('placeholder' => 'E-Mail'))}}</div>
 </div>
 
 <div class="row">
 	
-	<div class="large-1 columns"><span class="icon-facebook"></span></div>
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-facebook"></i></span></div>
 		<div class="large-5 columns">{{Form::text('facebook', '', array('placeholder' => 'Paste Facebook link here'))}}</div>
 	
-	<div class="large-1 columns"><span class="icon-twitter"></span></div>
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-twitter"></i></div>
 		<div class="large-5 columns">{{Form::text('twitter', '', array('placeholder' => 'Paste Twitter link here'))}}</div>
 </div>
 
 <div class="row">	
-	<div class="large-1 columns"><span class="icon-instagram"></span></div>	
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-instagram"></i></div>	
 		<div class="large-5 columns">{{Form::text('instagram', '', array('placeholder' => 'Paste IG link here'))}}</div>
-	<div class="large-1 columns"><span class="icon-globe"></span></div>		
+	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-link"></i></div>		
 		<div class="large-5 columns">{{Form::text('website', '', array('placeholder' => 'Pase Website link here'))}}</div>
 
 
@@ -89,5 +79,3 @@
 
 <br><br>
 
-
-@stop

@@ -10,16 +10,11 @@
 
 @section('content')
 
-<h1>Contact Manager</h1>
-<br>
+{{View::make('contacts.contact_manager')}}
 
 @foreach($contacts as $contact)
 
 
-
-<a href="#" data-reveal-id="Modal_{{$contact->id}}" class="btn-large btn-inverse"></u>{{$contact->f_name}} <i>{{$contact->nickname}}</i> {{$contact->l_name}}</a><br>
-
-	
 
 
 

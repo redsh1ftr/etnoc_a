@@ -10,23 +10,23 @@
 
 @section('content')
 
-<h1>Contact Manager</h1>
 <br>
 
-Search by 
-	
-	{{Form::open(array('route' => 'contactSearch', 'method' => 'post'))}}
 
-	<select name="type"> 
-		<option value="f_name">First Name</option>
-		<option value="nickname">Alias</option>
-		<option value="l_name">Last Name</option>
 
-	</select>
+<div id="newContact" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;" data-reveal> 
 
-	{{Form::text('search')}}
-	{{Form::submit('serch')}}
-	{{Form::close()}}
+                            {{View::make('contacts.create')}}
+
+
+<a class="close-reveal-modal">&#215;</a>
+
+
+
+</div>
+
+
+{{View::make('contacts.contact_manager')}}
 
 @foreach(Contact::all() as $contact)
 
@@ -35,7 +35,6 @@ Search by
 <a href="#" data-reveal-id="Modal_{{$contact->id}}" class="btn-large btn-inverse"></u>{{$contact->f_name}} <i>{{$contact->nickname}}</i> {{$contact->l_name}}</a><br>
 
 	
-
 
 
 

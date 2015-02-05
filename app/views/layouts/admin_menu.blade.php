@@ -10,7 +10,25 @@
                           <li><img src="http://www.eternallynocturnal.com/images/witeskull.png"></li>
                             <li class="back"><a href="#">Back</a></li>
                             <li>{{link_to_route('contacts.index', 'Contacts')}}</li>           
-                            <li>{{link_to_route('contacts.create', 'New Contact')}}</li>       
+<div class="row">
+  <div class="large-12 columns" style="color:#000000">
+      
+      {{Form::open(array('route' => 'contactSearch', 'method' => 'post'))}}
+
+      <select name="type"> 
+        <option value="f_name">First Name</option>
+        <option value="nickname">Alias</option>
+        <option value="l_name">Last Name</option>
+
+      </select>
+
+      {{Form::text('search')}}
+      {{Form::submit('Find Contact...')}}
+      {{Form::close()}}
+  </div>
+
+  
+</div>      
                       </ul>
 
                   </li>
