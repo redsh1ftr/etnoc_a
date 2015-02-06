@@ -11,7 +11,45 @@
 </div>
 
 
+
+
+
+
+<div id="findContact" class="reveal-modal" style="max-width:400px;height:200px;max-height:80%;background-color:#000000;" data-reveal> 
+
+                            {{View::make('contacts.contact_search')}}
+
+
+<a class="close-reveal-modal">&#215;</a>
+
+
+
+</div>
+
+
+
+<hr>
+
 @foreach($contacts as $contact)
+
+
+  <div id="editContact" class="reveal-modal" style="max-width:80%;height:700px;max-height:80%;overflow-y:scroll;background-color:#000000;" data-reveal> 
+
+                              {{View::make('contacts.edit')->with('contact', $contact)}}
+
+  <a class="close-reveal-modal">&#215;</a>
+
+
+
+  </div>
+
+
+<div id="infoContact" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;background-color:#000000" data-reveal> 
+
+
+
+
+</div>
 
 
 
@@ -26,35 +64,50 @@
 <div id="Modal_{{$contact->id}}" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;background-color:#000000" data-reveal> 
 
 
-<ul class="tabs" data-tab >
-  <li class="tab-title active"><a href="#panel1" style="color:#700000;background-color:#000000;font-size:40px"><i class="fi-torso"></i></a></li>
-  <li class="tab-title"><a href="#panel2" style="color:#700000;background-color:#000000;font-size:40px"><i class="fi-wrench"></i></a></li>
-  <li class="tab-title"><a href="#panel3" style="color:#700000;background-color:#000000;font-size:40px"><i class="fi-camera"></i></a></li>
-</ul>
 
 
 
 
 
-<div class="tabs-content">
+
+
   <div class="content active" style="height:700px" id="panel1" style="background-color:#000000;color:#ffffff">
     
 
 
 
       <div class="row">
-        <div class="large-12 columns">
-          {{$contact->f_n}} <i>{{$contact->nickname}}</i> {{$contact->l_name}}</div>
-      </div>
+
+          <div class="large-12 columns">
+
+              
+                <table width="100%" style="border-color:#000000;background-color:#700000">
+                  <td> <a href="{{$contact->facebook}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-facebook"></i></a>
+                  <td> <a href="{{$contact->twitter}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-twitter"></i></a>
+                  <td> <a href="{{$contact->instagram}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-instagram"></i></a>
+                  <td> <a href="{{$contact->website}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-link"></i></a>
+                  <td><a href="mailto:{{$contact->email}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-mail"></i></a>
+                  <td><a href="#" data-reveal-id="editContact" style="color:#000000;background-color:#700000;font-size:30px" data-reveal><i class="fi-wrench"></i></a>
 
 
-      <div class="row">
-        <div class="large-5 columns">{{$contact->street1}} {{$contact->street2}}</div>
-      </div>
-      
-      <div class="row">
+                  
+                    
+                  <ul class="tabs" data-tab >
+                  <td> <a href="#panel3" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-camera"></i></a>
+                  </ul>
+                  <td>{{$contact->f_name}} <i>{{$contact->nickname}}</i> {{$contact->l_name}}
 
-        <div class="large-5 columns">{{$contact->city}} {{$contact->state}} {{$contact->zip}}</div>
+              <td>{{$contact->street1}} {{$contact->street2}}<br>
+              {{$contact->city}} {{$contact->state}} {{$contact->zip}}<br>
+                </table>
+          
+        <img style="max-height:400px;" src="http://www.eternallynocturnal.com/images/beanie_1.jpg"><br>
+            
+              
+
+
+          </div>
+
 
       </div>
 
@@ -148,15 +201,17 @@
 <br>
 
 
-<button type="submit" style="color:#700000;background-color:#000000;font-size:40px"><i class="fi-play-circle"></i> Update {{$contact->f_name}} {{$contact->l_name}}</button>
+<button type="submit" style="color:#700000;background-color:#000000;font-size:20px"><i class="fi-play-circle"></i> Update {{$contact->f_name}} {{$contact->l_name}}</button>
 
 {{Form::close()}}
 
 </div>
 
 <div class="content" id="panel3">
+
+  fff
   </div>
-</div>
+
 
 <a class="close-reveal-modal">&#215;</a>
 

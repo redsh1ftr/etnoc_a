@@ -11,17 +11,18 @@
 @section('content')
 
 
-
+<div class="row">
 
 
 
 {{View::make('contacts.contact_manager')}}
 
 
-<br>
+</div>
 
+<div class="row">
 
 {{View::make('contacts.show')->with('contacts', $contacts)}}
 
-
+</div>
 @stop
