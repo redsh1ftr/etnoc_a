@@ -71,7 +71,7 @@
 
 <div class="row" style=" width:80%;">
   <center style="color:#000000;">
-  {{Form::textarea('notes')}}
+  {{Form::textarea('notes', $contact->notes, array('placeholder' => 'Notes...'))}}
   </center>
 </div>
 <br>
