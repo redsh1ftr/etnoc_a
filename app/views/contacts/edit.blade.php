@@ -44,26 +44,26 @@
 
 
 <div class="row">
-  <div class="large-1 columns"><a href="#" class="icon-phone"></a></div>
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-telephone"></i></div>
     <div class="large-5 columns">{{Form::text('phone')}}</div>
-  <div class="large-1 columns"><a href="#" class="icon-envelope"></a></div>
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-mail"></i></div>
     <div class="large-5 columns">{{Form::text('email')}}</div>
 </div>
 
 
 <div class="row">
   
-  <div class="large-1 columns"><a href="{{$contact->facebook}}" class="icon-facebook"></a></div>
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-facebook"></i></div>
     <div class="large-5 columns">{{Form::text('facebook')}}</div>
   
-  <div class="large-1 columns"><a href="#" class="icon-twitter"></a></div>
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-twitter"></i></div>
     <div class="large-5 columns">{{Form::text('twitter')}}</div>
 </div>
 
 <div class="row"> 
-  <div class="large-1 columns"><a href="#" class="icon-instagram"></a></div>  
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-instagram"></i></a></div>  
     <div class="large-5 columns">{{Form::text('instagram')}}</div>
-  <div class="large-1 columns"><a href="#" class="icon-globe"></a></div>    
+  <div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-link"></i></a></div>    
     <div class="large-5 columns">{{Form::text('website')}}</div>
 
 
