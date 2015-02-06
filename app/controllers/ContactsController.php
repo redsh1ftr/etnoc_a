@@ -51,12 +51,10 @@ class ContactsController extends \BaseController {
 	 */
 	public function show()
 	{
-		$type = Input::get('type');
-		$search = Input::get('search');
 
-		$contacts = Contact::where($type, 'like', $search)->get();
+		$contacts = Company::where(Input::get('type'), 'like', Input::get('search'))->get();
 
-		return View::make('contacts.show', compact('contacts'));
+		return View::make('contacts.index', compact('contacts'));
 	}
 
 	/**

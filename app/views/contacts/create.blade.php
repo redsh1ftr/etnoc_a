@@ -1,14 +1,12 @@
 
 
-<br><br><br>
-
 {{ Form::open(array('action' => 'ContactsController@store', 'files' => true)) }}
 
 
 <div class="row">
 		<div class="large-6 columns"><div style="color:#000000">
 			<select name="type">
-				<option>Choose Contact Type..GENERATE FROM LISTTTTTT..</option>
+				<option value="">Choose Contact Type..GENERATE FROM LISTTTTTT..</option>
 				<option value="ARTIST">Artist</option>
 				<option value="PHOTOGRAPHER">Photographer</option>
 			</select>
@@ -43,25 +41,25 @@
 
 
 <div class="row">
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-telephone"></i></div>
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-telephone"></i></div>
 		<div class="large-5 columns">{{Form::text('phone', '', array('placeholder' => 'XXX-XXX-XXXX'))}}</div>
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-mail"></i></div>
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-mail"></i></div>
 		<div class="large-5 columns">{{Form::text('email', '', array('placeholder' => 'E-Mail'))}}</div>
 </div>
 
 <div class="row">
 	
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-facebook"></i></span></div>
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-facebook"></i></span></div>
 		<div class="large-5 columns">{{Form::text('facebook', '', array('placeholder' => 'Paste Facebook link here'))}}</div>
 	
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-twitter"></i></div>
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-twitter"></i></div>
 		<div class="large-5 columns">{{Form::text('twitter', '', array('placeholder' => 'Paste Twitter link here'))}}</div>
 </div>
 
 <div class="row">	
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-social-instagram"></i></div>	
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-social-instagram"></i></div>	
 		<div class="large-5 columns">{{Form::text('instagram', '', array('placeholder' => 'Paste IG link here'))}}</div>
-	<div class="large-1 columns"><i style="color:#000000;font-size:30px" class="fi-link"></i></div>		
+	<div class="large-1 columns"><i style="color:#700000;font-size:30px" class="fi-link"></i></div>		
 		<div class="large-5 columns">{{Form::text('website', '', array('placeholder' => 'Pase Website link here'))}}</div>
 
 
@@ -72,8 +70,10 @@
 </div>
 <br>
 
+<i type="submit"  style="color:#700000;"></i>
 
-<button type="submit" class="btn-large btn-inverse">Create New Contact</button>
+
+<button  class="fi-plus" style="color:#700000;background-color:#000000;font-size:30px"></button>
 
 {{Form::close()}}
 

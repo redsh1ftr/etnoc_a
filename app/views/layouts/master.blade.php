@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stay Awake to Create</title>
-   <link href="//localhost/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
    <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/foundation.css">
    <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/normalize.css">
    <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
@@ -150,9 +149,6 @@
 </div>
 
 
-
-
-   <script src="/bootstrap/js/bootstrap.min.js"></script>
 
   <script src="//localhost/etnoc_a/public/foundation/js/vendor/jquery.js"></script>
   <script src="//localhost/etnoc_a/public/foundation/js/foundation.min.js"></script>

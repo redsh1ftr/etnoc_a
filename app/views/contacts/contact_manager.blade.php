@@ -1,5 +1,3 @@
-<h1>Contact Manager</h1>
-<br>
 <div class="row">
 	<div class="large-6 columns" style="color:#000000">
 			
@@ -17,8 +15,10 @@
 			{{Form::close()}}
 	</div>
 
-	<div class="large-6 columns">
-		<a href="#" data-reveal-id="newContact" class="btn-large btn-inverse">New Contact</a><br>
+	<div class="large-6 columns" style="text-align:left;">
+		<a href="{{URL::route('contacts.index')}}" style="color:#700000;background-color:#000000;font-size:30px"><i class="fi-home"></i> All Contacts</a><br>
+		<a href="#" data-reveal-id="newContact" style="color:#700000;background-color:#000000;font-size:30px"><i class="fi-plus"></i><i class="fi-torsos-all"></i> New Contact</a>
+
 	</div>
-</div>
+
 </div>

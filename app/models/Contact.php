@@ -4,6 +4,9 @@ class Contact extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
+
+		'type' => 'required',
+		'f_name' => 'required',
 		// 'title' => 'required'
 	];
 
@@ -31,10 +34,4 @@ class Contact extends \Eloquent {
 
 	protected $table = 'contacts';
 
-
-	public function lastName(){
-		$lastname = Contact::orderBy('l_name')->get();
-
-		return($lastname);
-	}
 }
