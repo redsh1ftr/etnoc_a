@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stay Awake to Create</title>
-   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/foundation.css">
-   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/css/normalize.css">
-   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
+   <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/foundation.css">
+   <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/normalize.css">
    <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
 
- <script src="//localhost/etnoc_a/public/foundation/js/vendor/modernizr.js"></script>
+ <script src="//54.149.206.42/etnoc_a/public/foundation/js/vendor/modernizr.js"></script>
 
 
   <style>
@@ -151,8 +150,8 @@
 
 
 
-  <script src="//localhost/etnoc_a/public/foundation/js/vendor/jquery.js"></script>
-  <script src="//localhost/etnoc_a/public/foundation/js/foundation.min.js"></script>
+  <script src="//54.149.206.42/etnoc_a/public/foundation/js/vendor/jquery.js"></script>
+  <script src="//54.149.206.42/etnoc_a/public/foundation/js/foundation.min.js"></script>
 
   <script>
     $(document).foundation();
