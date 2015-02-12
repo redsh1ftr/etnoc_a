@@ -6,7 +6,7 @@
   <title>Stay Awake to Create</title>
    <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/foundation.css">
    <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/normalize.css">
-   <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
+   <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
 
  <script src="//54.149.206.42/etnoc_a/public/foundation/js/vendor/modernizr.js"></script>
 
