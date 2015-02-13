@@ -32,12 +32,12 @@
                         
                           <li><img src="http://www.eternallynocturnal.com/images/witeskull.png"></li>
                             <li class="back"><a href="#">Back</a></li>
-                                <li><a href="#events">View/Edit Shows</a></li>
-
+                          
+                                <li><a href="#" data-reveal-id="showShows" style="color:#ffffff">Shows</a></li>
 
 
                                 <li><a href="#" data-reveal-id="newEvent" style="color:#ffffff">New Show</a></li>
-
+                                <li><a href="#" data-reveal-id="newVenue" style="color:#ffffff">New Venue</a></li>
 
 
 
@@ -114,5 +114,42 @@
   
   {{--NEW CONTACT END--}}
 
+
+  {{-- NEW VENUE--}}
+
+
+      <div id="newVenue" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;background-color:#000000;" data-reveal> 
+          {{--CONTENT HERE--}}
+
+                                  {{View::make('event_locations.create')}}
+                                  
+          {{--END CONTENT--}}
+
+      <a class="close-reveal-modal">&#215;</a>
+
+
+      </div>
+
+  
+  {{--NEW VENUE END--}}
+
+
+  {{--VENUES--}}
+
+
+      <div id="showShows" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;background-color:#000000;" data-reveal> 
+          {{--CONTENT HERE--}}
+
+                                  {{View::make('events.index')}}
+                                  
+          {{--END CONTENT--}}
+
+      <a class="close-reveal-modal">&#215;</a>
+
+
+      </div>
+
+  
+  {{--VENUES END--}}
 
 {{--END MODAL CODE--}}

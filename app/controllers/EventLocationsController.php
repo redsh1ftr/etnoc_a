@@ -31,7 +31,7 @@ class EventLocationsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Eventlocation::$rules);
+		$validator = Validator::make($data = Input::except('image_1', 'image_2', 'image_3'), Eventlocation::$rules);
 
 		if ($validator->fails())
 		{
@@ -40,7 +40,7 @@ class EventLocationsController extends \BaseController {
 
 		Eventlocation::create($data);
 
-		return Redirect::route('eventlocations.index');
+		return Redirect::route('contacts.index');
 	}
 
 	/**

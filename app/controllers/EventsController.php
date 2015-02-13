@@ -31,14 +31,23 @@ class EventsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$validator = Validator::make($data = Input::all(), Event::$rules);
+
+
+
+
+
+
+
+
+
+		$validator = Validator::make($data = Input::except('event_logo_image_1', 'event_logo_image_2', 'image_3'), Events::$rules);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Event::create($data);
+		Events::create($data);
 
 		return Redirect::route('events.index');
 	}
