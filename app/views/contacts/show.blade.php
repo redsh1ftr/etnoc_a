@@ -28,27 +28,62 @@
 
 
 <hr>
- <table align="center" border="0" style="border:1px solid;width:50%;border-color:#ffffff;color:#000000;background-color:transparent;border-between:always;font-size:30px;">
+
 @foreach($contacts as $contact)
 
 
   {{--BEGIN MODAL LINKS --}}
-     <div style="background-color:#700000">
+    <div style="background-color:#700000;border:2px #ffffff solid;padding:30px">
+      <div class="row" style="color:#000000;">
+          <div class="small-8 columns">
+            {{$contact->f_name}} {{$contact->nickname}} {{$contact->l_name}}
+          </div>
 
-        
-            <td style="background-color:#700000"> <a href="{{$contact->facebook}}" target="blank" style="color:#000000;background-color:#700000;font-size:30px" target="ipanel1"><i class="fi-social-facebook"></i></a>
-            <td style="background-color:#700000"> <a href="{{$contact->twitter}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-twitter"></i></a>
-            <td style="background-color:#700000"> <a href="{{$contact->instagram}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-instagram"></i></a>
-            <td style="background-color:#700000"> <a href="{{$contact->website}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-link"></i></a>
-            <td style="background-color:#700000"><a href="mailto:{{$contact->email}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-mail"></i></a>
-            <td style="background-color:#700000"><a href="tel:{{$contact->phone}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-telephone"></i></a>
-            <td style="font-size:20px;background-color:#700000">{{$contact->f_name}} <i>{{$contact->nickname}}</i> {{$contact->l_name}}
-            <td style="background-color:#700000">{{$contact->street1}} {{$contact->street2}}<br>
-                      {{$contact->city}} {{$contact->state}} {{$contact->zip}}<br>
-            <td style="background-color:#700000"> <a href="#panel3" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-camera"></i></a>
-            <td style="background-color:#700000"><a href="#" data-reveal-id="editContact_{{$contact->id}}" style="color:#000000;background-color:#700000;font-size:30px" data-reveal><i class="fi-wrench"></i></a></tr>
-</div>
+          
+
+          <div class="small-2 columns">
+            <a href="#panel3" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-camera"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="#" data-reveal-id="editContact_{{$contact->id}}" style="color:#000000;background-color:#700000;font-size:30px" data-reveal><i class="fi-wrench"></i></a>
+          </div>
+
+          
+
+
+      </div>
       
+      <div class="row" style="color:#000000">
+          <div class="small-2 columns">
+            <a href="{{$contact->facebook}}" target="blank" style="color:#000000;background-color:#700000;font-size:30px" target="ipanel1"><i class="fi-social-facebook"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="{{$contact->twitter}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-twitter"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="{{$contact->instagram}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-social-instagram"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="{{$contact->website}}" target="blank"  style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-link"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="mailto:{{$contact->email}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-mail"></i></a>
+          </div>
+
+          <div class="small-2 columns">
+            <a href="tel:{{$contact->phone}}" style="color:#000000;background-color:#700000;font-size:30px"><i class="fi-telephone"></i></a>
+          </div>
+
+      </div>
+
+
+</div>
+
 
 
   {{--END MODAL LINKS --}}

@@ -7,6 +7,9 @@
    <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/foundation.css">
    <link rel="stylesheet" href="//54.149.206.42/etnoc_a/public/foundation/css/normalize.css">
    <link rel="stylesheet" href="//localhost/etnoc_a/public/foundation/foundation-icons/foundation-icons.css" />
+   <link rel="stylesheet" type="text/css" href="//localhost/etnoc_a/public/date/jquery.datetimepicker.css"/ >
+      <script src="//localhost/etnoc_a/public/date/jquery.js"></script>
+      <script src="//localhost/etnoc_a/public/date/jquery.datetimepicker.js"></script>
 
  <script src="//54.149.206.42/etnoc_a/public/foundation/js/vendor/modernizr.js"></script>
 
@@ -120,6 +123,15 @@
 
 
     <section class="main-section">
+
+      {{--DATEPICKER INSTANTIATEX10--}}
+            @foreach(range(1,10) as $datetimepicker)
+              <script language="javascript">jQuery("#datetimepicker_{{$datetimepicker}}").datetimepicker(
+                {theme:'dark',
+                 format:'d.m.Y H:i',
+                 step:15});</script>
+            @endforeach
+      {{--DATEPICKER END--}}
 
 
 
