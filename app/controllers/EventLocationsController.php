@@ -11,7 +11,7 @@ class EventLocationsController extends \BaseController {
 	{
 		$eventlocations = Eventlocation::all();
 
-		return View::make('eventlocations.index', compact('eventlocations'));
+		return View::make('event_locations.index', compact('eventlocations'));
 	}
 
 	/**
@@ -49,11 +49,14 @@ class EventLocationsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		$eventlocation = Eventlocation::findOrFail($id);
+		$selector = Input::get('selector');
+		$needle = Input::get('needle');
 
-		return View::make('eventlocations.show', compact('eventlocation'));
+		$eventlocation = Eventlocation::where($selector, 'like', "%$needle%")->get();
+
+		return View::make('event_locations.show', compact('eventlocation'));
 	}
 
 	/**

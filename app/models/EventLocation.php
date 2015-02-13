@@ -30,4 +30,11 @@ class EventLocation extends \Eloquent {
 
 	protected $table = 'event_locations';
 
+	public function findContact(){
+
+		$contact = Contact::find($this->id)->first();
+
+		return($contact);
+	}
+
 }

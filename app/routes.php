@@ -38,16 +38,18 @@ Route::resource('events', 'EventsController');
 Route::resource('inventory', 'InventoriesController');
 
 Route::resource('contacts', 'ContactsController');
+Route::post('/contact/search', array('as' => 'contactSearch', 'uses' => 'ContactsController@show'));
 
 Route::resource('orders', 'OrdersController');
 
 Route::resource('event_locations', 'EventlocationsController');
+Route::post('/venue/search', array('as' => 'venueSearch', 'uses' => 'EventLocationsController@show'));
 
 ////// RANDOM ROUTES
 
 Route::get('/productmanager', array('as' => 'product_list', 'uses' => 'ProductsController@productmanager'));
 
-Route::post('/contact/search', array('as' => 'contactSearch', 'uses' => 'ContactsController@show'));
+
 
 Route::get('/sales', function()
 {
