@@ -13,11 +13,8 @@
 
 
 @foreach($eventlocation as $venues)
-{{$venues->findContact()}}
 
-	<div class="small-12 columns">
-            <a href="#" data-reveal-id="editVenue_{{$venues->id}}" style="color:#000000;background-color:#700000;font-size:30px;padding:10px;" data-reveal><i class="fi-wrench"></i> {{$venues->name}}</a>
-    </div>
+
 
 
   <div id="findVenue" class="reveal-modal" style="height:700px;max-height:80%;overflow-y:scroll;background-color:#000000;" data-reveal> 
